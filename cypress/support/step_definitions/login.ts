@@ -3,7 +3,7 @@ import loginPage from "../pages/loginPage";
 import inventoryPage from "../pages/inventoryPage";
 import users from "../../fixtures/sauceUsers.json";
 
-Given('Website is avaliable', () => {
+Given('Website is available', () => {
 
 });
 

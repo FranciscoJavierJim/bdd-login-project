@@ -1,6 +1,6 @@
 Feature: login saucedemo.com
   Background:
-    Given Website is avaliable
+    Given Website is available
 
   Scenario: Successful login with valid username and password
     Given I visit login page
