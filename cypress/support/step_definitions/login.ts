@@ -3,39 +3,36 @@ import loginPage from "../pages/loginPage";
 import inventoryPage from "../pages/inventoryPage";
 import users from "../../fixtures/sauceUsers.json";
 
-Given('Website is available', () => {
-
-});
-
-Given("I visit login page", () => {
+Given("Since we are on the saucedemo login website", () => {
   cy.visit("https://www.saucedemo.com");
 });
 
-When('Enter valid username and password', () => {
-  loginPage.fillUsername("standard_user");
-  loginPage.fillPassword("secret_sauce");
+When("Enter valid username and password", () => {
+  loginPage.typeUsername(users.validUser.username);
+  loginPage.typePassword(users.validUser.password);
 });
 
-When('Enter invalid username and correct password', () => {
-  loginPage.fillUsername("invalid_user");
-  loginPage.fillPassword("secret_sauce");
+When("Enter invalid username and correct password", () => {
+  loginPage.typeUsername(users.invalidUser.username);
+  loginPage.typePassword(users.invalidUser.password);
 });
 
-When('Enter valid username and incorrect password', () => {
-  loginPage.fillUsername("standard_user");
-  loginPage.fillPassword("invalid_password");
+When("Enter valid username and incorrect password", () => {
+  loginPage.typeUsername(users.invalidPassword.username);
+  loginPage.typePassword(users.invalidPassword.password);
 });
 
-When('I click on login', () => {
-  loginPage.submit();
+When("I click on login", () => {
+  loginPage.clickLogin();
 });
 
-Then('Should enter to inventory page', () => {
-  inventoryPage.elements.titleSpan().should('have.text', 'Products');
+Then("Should enter to inventory page", () => {
+  inventoryPage.assertTitle("Products");
 });
 
-Then('Should show the credentials error message', () => {
-  loginPage.shouldShowAuthError();
+Then("Should show the credentials error message", () => {
+  loginPage.shouldShowError();
 });
+
 
 

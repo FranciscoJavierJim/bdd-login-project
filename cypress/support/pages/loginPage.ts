@@ -1,19 +1,26 @@
-class LoginPage {
-  fillUsername(username: string): void {
-    cy.get('[data-test="username"]').clear().type(username);
+class loginPage {
+  private selectors = {
+    usernameInput: '#user-name',
+    passwordInput: '#password',
+    loginButton: '#login-button',
+    errorMessage: 'h3[data-test="error"]'
+  };
+
+  typeUsername(username: string): void {
+    cy.get(this.selectors.usernameInput).clear().type(username);
   }
 
-  fillPassword(password: string): void {
-    cy.get('[data-test="password"]').clear().type(password);
+  typePassword(password: string): void {
+    cy.get(this.selectors.passwordInput).clear().type(password);
   }
 
-  submit(): void {
-    cy.get('[data-test="login-button"]').click();
+  clickLogin(): void {
+    cy.get(this.selectors.loginButton).click();
   }
 
-  shouldShowAuthError(): void {
-    cy.get('[data-test="error"]').should('be.visible');
+  shouldShowError(): void {
+    cy.get(this.selectors.errorMessage).should('be.visible');
   }
 }
 
-export default new LoginPage();
+export default new loginPage();
