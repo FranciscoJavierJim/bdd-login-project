@@ -2,6 +2,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import loginPage from "../pages/loginPage";
 import inventoryPage from "../pages/inventoryPage";
 import users from "../../fixtures/sauceUsers.json";
+import 'cypress-mochawesome-reporter/cucumberSupport';
 
 Given("Since we are on the saucedemo login website", () => {
   cy.visit("https://www.saucedemo.com");

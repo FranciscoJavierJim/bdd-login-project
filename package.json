@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:runChrome": "cypress run --browser chrome --spec cypress/e2e/features/login.feature"
+
   },
   "author": "fjja",
   "license": "ISC",
@@ -14,6 +16,8 @@
     "cypress": "^15.2.0"
   },
   "devDependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "@cypress/grep": "^5.0.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
