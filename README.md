@@ -17,6 +17,7 @@ Este proyecto valida diferentes escenarios de inicio de sesión mediante archivo
 
 ## 📁 Estructura del proyecto
 
+```text
 cypress/
 ├── e2e/ # Archivos .feature (Gherkin)
 ├── pages/ # Page Objects (POM)
@@ -46,13 +47,9 @@ npx cypress open
 
 Este proyecto utiliza BDD con Gherkin para describir escenarios de login como:
 
-Login exitoso con credenciales válidas
+    Login exitoso con credenciales válidas
 
-Login fallido con datos inválidos
-
-Casos de campos obligatorios vacíos
-
-Etc.
+    Login fallido con datos inválidos
 
 (Los escenarios están definidos en los archivos .feature dentro de cypress/e2e.)
 
@@ -61,7 +58,7 @@ Etc.
 Uso de BDD con Cucumber / Gherkin para describir comportamiento de usuario. 
 HackMD
 
-Integración de Cypress con BDD, ejecutando escenarios de alto nivel.
+Integración de Cypress con BDD
 
 Organización de código con Page Object Model (POM) para facilitar mantenimiento.
 
